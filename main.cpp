@@ -11,26 +11,6 @@
 
 using namespace std;
 
-int binarySearch(int a[], int aSize, int target)
-{
-    int low = 0, high = aSize;
-    int mid;
-    if (!aSize)
-        return -1;
-    while (low <= high)
-    {
-        mid = low + (high-low)/2;
-        if (a[mid] == target)
-            return mid;
-        else
-            if (a[mid] < target)
-                low = mid + 1;
-            else
-                high = mid - 1;
-    }
-    return -1;
-}
-
 // Question: 10/12/2015 phone interview with Jignashu Parikh
 //
 // Find a local minima in an array. local minima is an element a[i] where a[i] < a[i+1] and a[i] < a[i-1].
@@ -156,14 +136,6 @@ int main(int argc, const char * argv[]) {
     
     cout << "findLocalMinima returned  " << minima << endl;
  
-    int target = 11;
-    int res = binarySearch(nums, sizeof(nums)/sizeof(nums[0]), target);
-    
-    if (res < 0)
-        cout << "binarySearch target " << target << " not found in array" << endl;
-    else
-        cout << "binarySearch found target at array[" << res << "]" <<  endl;
-    
     return 0;
 }
 
