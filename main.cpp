@@ -120,7 +120,8 @@ int findLocalMinima(int a[], int aSize)
 int main(int argc, const char * argv[]) {
     
     // int nums[] = {8,7,6,9,10,14};
-    int nums[] = {17, 16, 15, 11, 13, 14};
+    // int nums[] = {17, 16, 15, 11, 13, 14};
+    int nums[] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 995, 996, 1, 997, 998, 999}; // from Kara
     // int nums[] = {8,9};
     // int nums[] = {8};
     // int nums[] = {7, 6, 5, 4};  // ret -1
