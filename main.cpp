@@ -121,7 +121,7 @@ int main(int argc, const char * argv[]) {
     
     // int nums[] = {8,7,6,9,10,14};
     // int nums[] = {17, 16, 15, 11, 13, 14};
-    int nums[] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 995, 996, 1, 997, 998, 999}; // from Kara
+    int nums[] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 995, 996, 2, 997, 998, 999}; // from Kara
     // int nums[] = {8,9};
     // int nums[] = {8};
     // int nums[] = {7, 6, 5, 4};  // ret -1
@@ -135,6 +135,22 @@ int main(int argc, const char * argv[]) {
     
     int minima  = findLocalMinima(nums, numsCount);
     
+    cout << "findLocalMinima returned  " << minima << endl;
+    
+    // Kara's test case {3, 4,... 996, 1, 997, 998, 999}    
+    int intsCount = 1000-2;         // kludge but who cares
+    int ints[intsCount];
+    
+    iota(ints, ints+intsCount, 3);  // init ints 3 - n
+    int minimaIdx = intsCount - 4;  // index to minima which we set to 1 for Kara
+    iota(ints+minimaIdx+1, ints+intsCount, ints[minimaIdx]);
+    ints[minimaIdx] = 1;            // set local minima
+    
+    cout << std::dec << "ints array  {";
+    for (int i=0; i<intsCount; i++)
+        cout << setw(4) << ints[i];
+    cout << "}" << endl;
+
     cout << "findLocalMinima returned  " << minima << endl;
  
     return 0;
